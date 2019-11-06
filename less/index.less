@@ -53,8 +53,109 @@ table {
 	box-sizing: border-box;
 	max-width: 100%;
 }
-
+html{
+	font-size: 62.5%
+}
 html, body {
 	height: 100%;
+}
+
+// variables
+@primary-color: lightcyan;
+@secondary-color: purple;
+
+//  mixins
+.layout(@f-direction, @j-content, @a-items){
+	display: flex;
+	flex-direction: @f-direction;
+	justify-content: @j-content;
+	align-items: @a-items;
+}
+
+.border(){
+	border: 3px solid @secondary-color;
+	padding: 2%;
+}
+
+// Escape variables
+@mobile: ~"(max-width: 500px)";
+
+// Word Styling
+h1{
+	font-size: 4rem;
+}
+h2{
+	font-size: 3rem;
+}
+h3{
+	font-size: 2rem;
+}
+p, a, ul, table{
+	font-size: 1.5rem;
+}
+
+
+// Container Layout
+
+.container{
+	max-width: 100%;
+	.layout(row, space-between, space-between);
+}
+
+// Header Layout
+
+header{
+	width: 30%;
+	.layout(column, space-around, center);
+	.profile_pic{
+		background-image: url("/images/IMG_0326 copy.jpg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 200px;
+		width: 100%;
+	}
+	nav{
+		.layout(column, space-between, center);
+		width: 100%;
+	}// nav end
+		a{
+			.layout(row, center, center);
+			padding: 2%;
+			margin: 2%;
+			width: 80%;
+		}
+}// end header
+
+// Main Layout
+
+.main{
+	width: 65%;
+	line-height: 2;
+	.layout(column, space-between, stretch);
+	.title{
+
+	}// end title
+	.intro{
+		text-align: center;
+	} // end intro
+	.skills{
+		.layout(column, center, center);
+		h3{
+			text-align: center;
+			width: 50%;
+		}// end header
+		ul{
+			width: 75%;
+			li{
+				list-style-type: disc;
+			}// end li
+		} // end ul
+	}// end skills
+	.experience{
+		table{
+			width: 100%;
+		}// end table
+	}// end experience
 }
 
