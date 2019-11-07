@@ -83,7 +83,7 @@ html, body {
 }
 
 // Escape variables
-@mobile: ~"(max-width: 500px)";
+@mobile: ~"(max-width: 800px)";
 
 // Word Styling
 h1{
@@ -128,6 +128,7 @@ p, ul, table, form{
 header{
 	border: 0;
 	width: 30%;
+	height: 100%;
 	margin-left: 2%;
 	.layout(column, flex-start, center);
 	@media @mobile{
@@ -141,10 +142,12 @@ header{
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		height: 20vh;
+		height: 30vh;
 		width: 100%;
 		@media @mobile{
-			
+			border:0;
+			background-size: contain;
+			width: 90%;
 		}
 	}
 	nav{
@@ -171,8 +174,7 @@ header{
 			}
 			@media @mobile{
 				width: 100%;
-				padding: 4%;
-				margin: 0;
+				padding: 5%;
 			}
 		}
 }// end header
@@ -227,28 +229,37 @@ header{
 		ul{
 			border: 0;
 			width: 100%;
-			padding-left: 3%;
+			padding-left: 5%;
+			@media @mobile{
+				padding-left: 5%;
+			}
 			li{
 				border: 0;
 				list-style-type: disc;
+				margin-left: 5%;
 			}// end li
 		} // end ul
 	}// end skills
-	.experience{
-		margin-right: 2%;
-		@media @mobile{
-			margin: 0;
-		}
-		table{
-			.border();
-			width: 100%;
-			text-align: center;
-			@media @mobile{
-
-			}
-		}// end table
-	}// end experience
 }
+.experience{
+	line-height: 3;
+	@media @mobile{
+		line-height: 2;
+	}
+	table{
+		.border();
+		width: 100%;
+		text-align: center;
+		@media @mobile{
+
+		}
+		thead{
+			line-height: 2;
+			font-size: 4rem;
+			font-weight: 800;
+		}
+	}// end table
+}// end experience
 
 .contact{
 	.border();
