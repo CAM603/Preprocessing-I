@@ -133,11 +133,13 @@ table {
 }
 html {
   font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
 }
 html,
 body {
   height: 100%;
   background: lightcyan;
+  border: 0;
 }
 h1 {
   font-size: 5rem;
@@ -158,19 +160,22 @@ h3 {
 }
 p,
 ul,
-table {
+table,
+form {
   font-size: 2.5rem;
   color: black;
 }
 @media (max-width: 500px) {
   p,
   ul,
-  table {
+  table,
+  form {
     font-size: 3rem;
   }
 }
 .container {
   max-width: 100%;
+  border: 0;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
@@ -180,7 +185,7 @@ table {
   .container {
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -231,10 +236,16 @@ header a {
   flex-flow: row;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  border-radius: 2rem;
   padding: 5%;
   margin: 2%;
   width: 80%;
   font-size: 3rem;
+}
+header a:hover {
+  background: purple;
+  color: grey;
 }
 @media (max-width: 500px) {
   header a {
@@ -290,6 +301,11 @@ header a {
   text-align: center;
   width: 50%;
 }
+@media (max-width: 500px) {
+  .main .skills h3 {
+    width: 100%;
+  }
+}
 .main .skills ul {
   border: 0;
   width: 100%;
@@ -300,9 +316,34 @@ header a {
   list-style-type: disc;
 }
 .main .experience {
-  margin-top: 5%;
+  margin-right: 2%;
+}
+@media (max-width: 500px) {
+  .main .experience {
+    margin: 0;
+  }
 }
 .main .experience table {
+  border: 3px solid black;
+  padding: 2%;
   width: 100%;
   text-align: center;
+}
+.contact {
+  border: 3px solid black;
+  padding: 2%;
+  text-align: center;
+  margin-top: 2%;
+  line-height: 2;
+}
+@media (max-width: 500px) {
+  .contact {
+    border: 0;
+  }
+}
+.contact p {
+  border: 0;
+}
+.contact form {
+  border: 0;
 }

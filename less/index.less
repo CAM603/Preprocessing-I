@@ -54,11 +54,13 @@ table {
 	max-width: 100%;
 }
 html{
-	font-size: 62.5%
+	font-size: 62.5%;
+	font-family: 'Lato', sans-serif;
 }
 html, body {
 	height: 100%;
 	background: @background-color;
+	border: 0;
 }
 
 // variables
@@ -101,7 +103,7 @@ h1, h2, h3{
 
 }
 
-p, ul, table{
+p, ul, table, form{
 	font-size: 2.5rem;
 	color: @secondary-color;
 	@media @mobile{
@@ -114,11 +116,10 @@ p, ul, table{
 
 .container{
 	max-width: 100%;
-	
+	border: 0;
 	.layout(row, space-between, stretch);
 	@media @mobile{
-		.layout(column, space-between, center);
-		
+		.layout(column, center, center);
 	}
 }
 
@@ -143,7 +144,7 @@ header{
 		height: 20vh;
 		width: 100%;
 		@media @mobile{
-	
+			
 		}
 	}
 	nav{
@@ -158,10 +159,16 @@ header{
 	}// nav end
 		a{
 			.layout(row, center, center);
+			text-decoration: none;
+			border-radius: 2rem;
 			padding: 5%;
 			margin: 2%;
 			width: 80%;
 			font-size: 3rem;
+			&:hover{
+				background: @primary-color;
+				color: @base-color;
+			}
 			@media @mobile{
 				width: 100%;
 				padding: 4%;
@@ -213,6 +220,9 @@ header{
 		h3{
 			text-align: center;
 			width: 50%;
+			@media @mobile{
+				width: 100%;
+			}
 		}// end header
 		ul{
 			border: 0;
@@ -225,11 +235,12 @@ header{
 		} // end ul
 	}// end skills
 	.experience{
-		margin-top: 5%;
+		margin-right: 2%;
 		@media @mobile{
-			
+			margin: 0;
 		}
 		table{
+			.border();
 			width: 100%;
 			text-align: center;
 			@media @mobile{
@@ -239,3 +250,18 @@ header{
 	}// end experience
 }
 
+.contact{
+	.border();
+	text-align: center;
+	margin-top: 2%;
+	line-height: 2;
+	@media @mobile{
+		border: 0;
+	}
+	p{
+		border: 0;
+	}
+	form{
+		border: 0;
+	}
+}
