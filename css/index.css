@@ -142,13 +142,13 @@ body {
   border: 0;
 }
 h1 {
-  font-size: 5rem;
+  font-size: 7rem;
 }
 h2 {
-  font-size: 3.5rem;
+  font-size: 5rem;
 }
 h3 {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 h1,
 h2,
@@ -190,10 +190,12 @@ form {
   }
 }
 header {
-  border: 0;
+  border: 3px solid black;
+  padding: 2%;
+  background-color: #e7e5e5;
   width: 30%;
   height: 100%;
-  margin-left: 2%;
+  margin: 1%;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
@@ -201,7 +203,7 @@ header {
 }
 @media (max-width: 800px) {
   header {
-    width: 100%;
+    width: 95%;
     margin-left: 0;
   }
 }
@@ -244,7 +246,10 @@ header a {
   flex-flow: row;
   justify-content: center;
   align-items: center;
+  background-color: lightcyan;
   text-decoration: none;
+  border: 3px solid black;
+  padding: 2%;
   border-radius: 2rem;
   padding: 5%;
   margin: 2%;
@@ -253,18 +258,22 @@ header a {
 }
 header a:hover {
   background: purple;
-  color: grey;
+  color: #e7e5e5;
 }
 @media (max-width: 800px) {
   header a {
     width: 100%;
     padding: 5%;
+    font-size: 5rem;
   }
 }
 .main {
-  border: 0;
+  border: 3px solid black;
+  padding: 2%;
+  margin: 1% 1%;
   width: 65%;
   line-height: 2;
+  background-color: #e7e5e5;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -272,7 +281,7 @@ header a:hover {
 }
 @media (max-width: 800px) {
   .main {
-    width: 100%;
+    width: 95%;
   }
 }
 .main .title {
@@ -284,7 +293,9 @@ header a:hover {
   }
 }
 .main .intro {
-  border: 0;
+  border: 3px solid black;
+  padding: 2%;
+  background-color: lightcyan;
   text-align: center;
 }
 .main .intro p {
@@ -292,17 +303,23 @@ header a:hover {
   border: 0;
 }
 @media (max-width: 800px) {
+  .main .intro {
+    background-color: lightcyan;
+  }
   .main .intro p {
-    text-align: center;
+    text-align: left;
     padding: 0 2%;
   }
 }
 .main .skills {
-  border: 0;
+  margin-top: 2%;
+  border: 3px solid black;
+  padding: 2%;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: lightcyan;
 }
 .main .skills h3 {
   text-align: center;
@@ -313,23 +330,36 @@ header a:hover {
     width: 100%;
   }
 }
-.main .skills ul {
+.main .skills .buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
   border: 0;
   width: 100%;
-  padding-left: 5%;
 }
-@media (max-width: 800px) {
-  .main .skills ul {
-    padding-left: 5%;
-  }
+.main .skills .buttons button {
+  width: fill;
+  font-size: 3rem;
+  background-color: purple;
+  color: #e7e5e5;
+  border: 3px solid black;
+  border-radius: 5rem;
+  margin: 1%;
+  padding: 2%;
 }
-.main .skills ul li {
-  border: 0;
-  list-style-type: disc;
-  margin-left: 5%;
+.main .skills .buttons button:hover {
+  background-color: #e7e5e5;
+  color: purple;
 }
 .experience {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   line-height: 3;
+  border: 0;
 }
 @media (max-width: 800px) {
   .experience {
@@ -339,13 +369,24 @@ header a:hover {
 .experience table {
   border: 3px solid black;
   padding: 2%;
-  width: 100%;
+  background-color: #e7e5e5;
+  width: 98%;
   text-align: center;
 }
+@media (max-width: 800px) {
+  .experience table {
+    width: 95%;
+  }
+}
 .experience table thead {
+  background-color: #cf63cf;
   line-height: 2;
   font-size: 4rem;
   font-weight: 800;
+}
+.experience table thead th {
+  border: solid black 5px;
+  line-height: 2;
 }
 .contact {
   border: 3px solid black;

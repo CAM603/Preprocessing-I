@@ -65,7 +65,7 @@ html, body {
 
 // variables
 @background-color: lightcyan;
-@base-color: grey;
+@base-color: rgb(231, 229, 229);
 @primary-color: purple;
 @secondary-color: black;
 
@@ -87,13 +87,13 @@ html, body {
 
 // Word Styling
 h1{
-	font-size: 5rem;
+	font-size: 7rem;
 }
 h2{
-	font-size: 3.5rem;
+	font-size: 5rem;
 }
 h3{
-	font-size: 3rem;
+	font-size: 4rem;
 }
 h1, h2, h3{
 	color: @primary-color;
@@ -126,13 +126,14 @@ p, ul, table, form{
 // Header Layout
 
 header{
-	border: 0;
+	.border();
+	background-color: @base-color;
 	width: 30%;
 	height: 100%;
-	margin-left: 2%;
+	margin: 1%;
 	.layout(column, flex-start, center);
 	@media @mobile{
-		width: 100%;
+		width: 95%;
 		margin-left: 0;
 		
 	}
@@ -162,7 +163,9 @@ header{
 	}// nav end
 		a{
 			.layout(row, center, center);
+			background-color: @background-color;
 			text-decoration: none;
+			.border();
 			border-radius: 2rem;
 			padding: 5%;
 			margin: 2%;
@@ -175,6 +178,7 @@ header{
 			@media @mobile{
 				width: 100%;
 				padding: 5%;
+				font-size: 5rem;
 			}
 		}
 }// end header
@@ -183,12 +187,14 @@ header{
 // Main Layout
 
 .main{
-	border: 0;
+	.border();
+	margin: 1% 1%;
 	width: 65%;
 	line-height: 2;
+	background-color: @base-color;
 	.layout(column, space-between, stretch);
 	@media @mobile{
-		width: 100%;
+		width: 95%;
 		
 	}
 	.title{
@@ -198,24 +204,27 @@ header{
 		}
 	}// end title
 	.intro{
-		border: 0;
+		.border();
+		background-color: @background-color;
 		text-align: center;
 		p{
 			text-align: left;
 			border: 0;
 		}
 		@media @mobile{
+			background-color: @background-color;
 			p {
-				text-align: center;
+				text-align: left;
 				padding: 0 2%;
 			}
 		}
 
 	} // end intro
 	.skills{
-		border: 0;
+		margin-top: 2%;
+		.border();
 		.layout(column, flex-start, center);
-		
+		background-color: @background-color;
 		@media @mobile{
 			
 		}
@@ -226,37 +235,52 @@ header{
 				width: 100%;
 			}
 		}// end header
-		ul{
+		.buttons{
+			.layout();
+			align-content: space-around;
 			border: 0;
 			width: 100%;
-			padding-left: 5%;
-			@media @mobile{
-				padding-left: 5%;
+			button{
+				width: fill;
+				font-size: 3rem;
+				background-color: @primary-color;
+				color: @base-color;
+				&:hover{
+					background-color: @base-color;
+					color: @primary-color;
+				}
+				.border();
+				border-radius: 5rem;
+				margin: 1%;
+				padding: 2%;
 			}
-			li{
-				border: 0;
-				list-style-type: disc;
-				margin-left: 5%;
-			}// end li
-		} // end ul
+		}
 	}// end skills
 }
 .experience{
+	.layout();
 	line-height: 3;
+	border: 0;
 	@media @mobile{
 		line-height: 2;
 	}
 	table{
 		.border();
-		width: 100%;
+		background-color: @base-color;
+		width: 98%;
 		text-align: center;
 		@media @mobile{
-
+			width: 95%;
 		}
 		thead{
+			background-color: rgb(207, 99, 207);
 			line-height: 2;
 			font-size: 4rem;
 			font-weight: 800;
+			th{
+				border: solid black 5px;;
+				line-height: 2;
+			}
 		}
 	}// end table
 }// end experience
